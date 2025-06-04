@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track My Order | Sleep Country Canada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #d71920;
+            padding: 10px 20px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d71920;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+        .sub-logo {
+            font-size: 14px;
+            color: #333;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            background-color: #ccc;
+            border: none;
+            cursor: pointer;
+        }
+        .tracking-info {
+            margin-top: 30px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        .error {
+            color: red;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>Get 20% Off Almost Everything – Final Week!*</header>
+    <div class="container">
+        <div class="logo">SleepCountry <span class="sub-logo">Proudly Canadian 🍁</span></div>
+        <h2>Track My Order</h2>
+        <p>To check on the status of your order, please fill out the details below.</p>
+
+        <div class="form-group">
+            <label for="order-number">Enter your order number</label>
+            <input type="text" id="order-number" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Enter email address</label>
+            <input type="email" id="email" required>
+        </div>
+        <button onclick="trackOrder()">Look Up</button>
+
+        <div class="error" id="error-msg"></div>
+        <div class="tracking-info" id="tracking-info">
+Tracking # SC0000-4MP6693 Status: Order Created May 20th 2025
+
+Tracking # SC0000-4MP6693 Status: Shipping Label Created - Location: Duffering, Virginia - Date: May 21st 2025
+
+Tracking # SC0000-4MP6693 Status: Shipped - Location: Duffering, Virginia - Factory Warehouse
+
+Tracking # SC0000-4MP6693 Status: In Transit to Destination Country Border Customs - Location: Duffering, Virginia to Michigan, US - May 22nd 2025
+
+Tracking # SC0000-4MP6693 Status: Arrived at Customs for Inspection Location: Michigan, US Date: May 26th 2025
+
+Tracking # SC0000-4MP6693 Status: Entering Destination Country: CANADA - May 27th 2025
+
+Tracking # SC0000-4MP6693 Status: Leaving Canadian Border: May 28th 2025 Location: Saulte St-Marie, ON
+
+Tracking # SC0000-4MP6693 Status: Shipment arriving at Destination Warehouse: Saulte St-Marie, ON May 30th 2025
+
+Tracking # SC0000-4MP6693 Status: Cleared Product Approval for Delivery Date Location: Saulte St-Marie, ON
+
+Tracking # SC0000-4MP6693 Status: In Transit for Delivery to Customer: Monday, June 2nd - to be Delivered Wednesday June 4th 2025
+
+Tracking # SC0000-4MP6693 Status: DELAYED - Delivery changed to Thursday, June 5th 2025 - 10 AM
+        </div>
+    </div>
+    <script>
+        function trackOrder() {
+            var orderNumber = document.getElementById('order-number').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var info = document.getElementById('tracking-info');
+            var error = document.getElementById('error-msg');
+
+            if (orderNumber === "SC0000-4MP6693" && email !== "") {
+                info.style.display = 'block';
+                error.innerText = "";
+            } else {
+                info.style.display = 'none';
+                error.innerText = "Tracking number not found. Please check and try again.";
+            }
+        }
+    </script>
+</body>
+</html>
